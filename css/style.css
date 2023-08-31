@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+:root {
+  --white: #f6f6fe;
+  --grey-violet: #b3b5c6;
+  --light-violet: #a3a8f0;
+  --dark-violet: #696fdd;
+  --dark-blue: #494c5f;
+  --gradient: linear-gradient(to right, var(--light-violet), var(--dark-violet));
+  --shadow: 5px 5px 10px 1px var(--grey-violet);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  background-image: url(../IMG/bg-top.svg), url(../IMG/bg-bottom.svg);
+  background-position: right top, left bottom;
+  background-repeat: no-repeat;
+  background-color: var(--white);
+}
+
+header {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+header > h1 {
+  font-weight: 700;
+  color: var(--dark-blue);
+}
+
+.price__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.price__annually, .price__monthly{
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--grey-violet);
+  margin: 0;
+}
+
+/* Toggle */
+.toggle__switch {
+  display: inline-block;
+  position: relative;
+}
+
+.card__btn {
+  width: 15em;
+  padding: 0.5rem 0;
+  border: none;
+  border-radius: 4px;
+  border: 1px solid var(--dark-violet);
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: var(--gradient);
+  color: var(--white);
+}
+
+.card__btn:hover {
+  border: 1px solid var(--dark-violet);
+  background: none;
+  color: var(--dark-violet);
+  transition: all .5s ease-in-out;
+}
+
+.card__btn--active {
+  border: 1px solid var(--white);
+  background: var(--white);
+  color: var(--dark-violet);
+}
+
+.card__btn--active:hover {
+  border: 1px solid var(--white);
+  background: none;
+  color: var(--white);
+  transition: all .5s ease-in-out;
+}
+
+
+@media (min-width: 350px) {
+  .toggle__switch {
+    height: 1.5rem;
+    width: 3rem;
+  }
+
+  .toggle--input {
+    height: 0;
+    width: 0;
+    opacity: 0;
+  }
+
+  .toggle--label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--gradient);
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+  .toggle--label::before {
+    position: absolute;
+    height: 1.1rem;
+    width: 1.1rem;
+    left: 4px;
+    bottom: 4px;
+    content: "";
+    background-color: var(--white);
+    transition: 0.5s;
+  }
+
+  .toggle--label:hover{
+    opacity: .8;
+  }
+
+  .toggle--input:checked + .toggle--label {
+    background-color: var(--gradient);
+  }
+
+  .toggle--input:focus + .toggle--label {
+    box-shadow: 0 0 1px var(--grey-violet);
+  }
+
+  .toggle--input:checked + .toggle--label::before {
+    transform: translateX(1.4rem);
+  }
+
+  .toggle--label {
+    border-radius: 1rem;
+  }
+
+  .toggle--label::before {
+    border-radius: 50%;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2.5em 0;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 23.33em;
+    width: 16.66em;
+    background: #fff;
+    border-radius: 7px;
+  }
+
+  .card:nth-child(2n + 1){
+    box-shadow: var(--shadow);
+  }
+
+  .card__header {
+    padding: unset;
+    text-align: unset;
+  }
+
+  .card__title{
+    font-size: 1rem;
+    color: var(--dark-blue);
+    margin: 0;
+  }
+
+  .card__price {
+    margin: 0.5rem 0;
+  }
+
+  .basic_price, .master_price, .professional_price {
+    font-size: 3.1rem;
+    color: var(--dark-blue);
+    margin: 0;
+  }
+
+  .card__plan {
+    margin: 1rem 0;
+  }
+
+  .card__info {
+    width: 12.4em;
+    border: 1px solid var(--grey-violet);
+    border-right: 0;
+    border-left: 0;
+    padding: 0.2em 0;
+  }
+
+  .card__info > h3 {
+    font-size: .9rem;
+    color: var(--dark-blue);
+    text-align: center;
+    margin: 0;
+    padding: 0.5rem 0;
+  }
+
+  .mid {
+    border: none;
+  }
+
+  .card--active {
+    background: var(--gradient);
+    height: 25.44em;
+  }
+
+  .card__title--active {
+    color: var(--white);
+  }
+
+  .professional_price {
+    color: var(--white);
+  }
+  
+  .card__info--active > h3 {
+    color: var(--white);
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    flex-direction: row;
+    gap: unset;
+  }
+
+  .card:first-child{
+    border-radius: 7px 0 0 7px;
+  }
+
+  .card:last-child{
+    border-radius: 0 7px 7px 0;
+  }
+}
