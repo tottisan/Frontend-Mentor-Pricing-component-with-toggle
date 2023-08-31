@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Component with Toggle</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Our Pricing</h1>
+  
+        <div class="price__toggle">
+          <h2 class="price__annually">Annually</h2>
+          <div class="toggle__switch">
+            <input type="checkbox" name="toggle" id="toggle" class="toggle--input" />
+            <label for="toggle" class="toggle--label"></label>
+          </div>
+          <h2 class="price__monthly">Monthly</h2>
+        </div>
+      </header>
+  
+      <main>
+        <div class="card">
+          <header class="card__header">
+            <h2 class="card__title">Basic</h2>
+          </header>
+  
+          <div class="card__price">
+            <h2 class="basic_price" id="basic_price">$ 199.99</h2>
+          </div>
+  
+          <div class="card__plan">
+            <div class="card__info">
+              <h3>500 GB Storage</h3>
+            </div>
+  
+            <div class="card__info mid">
+              <h3>2 Users Allowed</h3>
+            </div>
+  
+            <div class="card__info">
+              <h3>Send up to 3 GB</h3>
+            </div>
+          </div>
+  
+          <footer>
+            <button class="card__btn">Learn more</button>
+          </footer>
+        </div>
+  
+        <div class="card card--active">
+          <header class="card__header">
+            <h2 class="card__title card__title--active">Professional</h2>
+          </header>
+  
+          <div class="card__price">
+            <h2 class="professional_price" id="professional_price">$ 249.99</h2>
+          </div>
+  
+          <div class="card__plan">
+            <div class="card__info card__info--active ">
+              <h3>1 TB Storage</h3>
+            </div>
+  
+            <div class="card__info card__info--active mid">
+              <h3>5 Users Allowed</h3>
+            </div>
+  
+            <div class="card__info card__info--active">
+              <h3>Send up to 10 GB</h3>
+            </div>
+          </div>
+  
+          <footer>
+            <button class="card__btn card__btn--active">Learn more</button>
+          </footer>
+        </div>
+  
+        <div class="card">
+          <header class="card__header">
+            <h2 class="card__title">Master</h2>
+          </header>
+  
+          <div class="card__price">
+            <h2 class="master_price" id="master_price">$ 399.99</h2>
+          </div>
+  
+          <div class="card__plan">
+            <div class="card__info">
+              <h3>2 TB Storage</h3>
+            </div>
+  
+            <div class="card__info mid">
+              <h3>10 Users Allowed</h3>
+            </div>
+  
+            <div class="card__info">
+              <h3>Send up to 20 GB</h3>
+            </div>
+          </div>
+  
+          <footer>
+            <button class="card__btn">Learn more</button>
+          </footer>
+        </div>
+      </main>
+</body>
+</html>
